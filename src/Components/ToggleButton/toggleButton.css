@@ -1,0 +1,33 @@
+.togglgeButton-body {
+  width: 45px;
+  height: 20px;
+  border-radius: 50px;
+  background-color: var(--toggle-button-background-color);
+  position: relative;
+
+  cursor: pointer;
+
+  border: 1px solid black;
+}
+
+.toggleButton-switch {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  /* background-color: rgb(27, 112, 168); */
+  background-color: white;
+
+  transform: translateX(120%) translateY(-5%);
+
+  transition: all 0.5s ease-in-out;
+
+  border: 2px solid var(--toggle-button-stroke-color);
+
+  text-align: center;
+}
+
+.dark {
+  transform: translateX(0%) translateY(-5%);
+
+  border: 2px solid black;
+}

@@ -1,0 +1,16 @@
+#todo-container {
+  width: 430px;
+  height: 450px;
+  background-color: var(--todo-container-background-color);
+
+  position: relative;
+
+  border-radius: 20px;
+}
+
+#todo-container .heading {
+  font-size: 4.2rem;
+  text-align: center;
+  margin-top: 10px;
+  color: var(--text-color);
+}

@@ -1,0 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+:root {
+  --background-theme-color: #6fcf97;
+  --todo-container-background-color: #f5f073;
+  --text-color: black;
+  --input-field-background: #faeab9;
+  --todoDisplay-background-color: #f3f1bf;
+
+  --default-font: "Poppins", sans-serif;
+
+  --toggle-button-background-color: #c4c4c4;
+  --toggle-button-stroke-color: #2d9cdb;
+}
