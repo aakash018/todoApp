@@ -1,8 +1,12 @@
 import React, { useState } from 'react'
+import useLocalStorage from '../../CustomHooks/useLocalStorage'
 import Input from '../Input/Input'
+import TaskContainer from '../TaskContainer/TaskContainer'
 import "./toDoContainer.css"
 
 const ToDoContainer:React.FC = () => {
+
+    const [taskArray, setTaskArray] = useLocalStorage("-todo-task-input", [])
 
     const [taskInput, setTaskInput] = useState("")
 
@@ -26,6 +30,10 @@ const ToDoContainer:React.FC = () => {
         <div id="todo-container">
             <section className="heading">TO-DO</section>
             <Input type="text" placeHolder="Add Task" stateToUpdate={setTaskInput} style={InputStyle}/>
+            <button onClick={() => setTaskArray(taskArray.concat(taskInput))}>Click</button>
+            <section id="taskContainer">
+                <TaskContainer tasks={taskArray} setTasks={setTaskArray}/>
+            </section>
         </div>
     )
 }

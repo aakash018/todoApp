@@ -1,0 +1,13 @@
+#taskContainer-container {
+  width: 400px;
+  height: 280px;
+  background-color: var(--todoDisplay-background-color);
+
+  border-radius: 20px;
+
+  overflow: auto;
+
+  color: var(--text-color);
+
+  position: relative;
+}

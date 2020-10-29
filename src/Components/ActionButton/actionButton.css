@@ -1,0 +1,5 @@
+.action-button-container button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}

@@ -1,0 +1,27 @@
+.taskCard-container {
+  width: 95%;
+  height: 77px;
+  background-color: var(--task-card-background-color);
+  margin: 9px;
+
+  border-radius: 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.taskContent {
+  margin-left: 20px;
+}
+
+.taskActions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 100%;
+  width: 33%;
+
+  margin-right: 20px;
+}
