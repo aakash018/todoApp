@@ -1,14 +1,30 @@
 import React, { useState } from 'react'
 import useLocalStorage from '../../CustomHooks/useLocalStorage'
+import ActionButton from '../ActionButton/ActionButton'
 import Input from '../Input/Input'
+import Select from '../Select/Select'
 import TaskContainer from '../TaskContainer/TaskContainer'
 import "./toDoContainer.css"
 
 const ToDoContainer:React.FC = () => {
 
     const [taskArray, setTaskArray] = useLocalStorage("-todo-task-input", [])
-
+    const [taskOptions, setTaskOPtions] = useState("")
     const [taskInput, setTaskInput] = useState("")
+
+    const handleTaskAdd = () => {
+
+        interface Task  {
+            task?: string,
+            status?: boolean
+        }
+
+        const taskObject:Task = {}
+        taskObject.task = taskInput
+        taskObject.status = false
+
+        setTaskArray(taskArray.concat(taskObject))
+    }
 
     const InputStyle:React.CSSProperties = {
         width: "70%",
@@ -29,10 +45,11 @@ const ToDoContainer:React.FC = () => {
     return (
         <div id="todo-container">
             <section className="heading">TO-DO</section>
+            <Select options={["All","Completed", "Unfinished"]} stateToSet={setTaskOPtions}/>
             <Input type="text" placeHolder="Add Task" stateToUpdate={setTaskInput} style={InputStyle}/>
-            <button onClick={() => setTaskArray(taskArray.concat(taskInput))}>Click</button>
+            <ActionButton lable="+" onClick={handleTaskAdd}/>
             <section id="taskContainer">
-                <TaskContainer tasks={taskArray} setTasks={setTaskArray}/>
+                <TaskContainer tasks={taskArray} setTasks={setTaskArray} taskFilterFlag={taskOptions}/>
             </section>
         </div>
     )

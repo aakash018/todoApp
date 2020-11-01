@@ -9,6 +9,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  font-size: 1.5rem;
 }
 
 .taskContent {
@@ -24,4 +26,9 @@
   width: 33%;
 
   margin-right: 20px;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: rgb(131, 131, 131);
 }

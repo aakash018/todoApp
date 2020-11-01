@@ -11,3 +11,18 @@
 
   position: relative;
 }
+
+.delete-animation {
+  animation-name: deleteAnimation;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes deleteAnimation {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

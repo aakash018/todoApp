@@ -8,8 +8,9 @@ import ActionButton from '../ActionButton/ActionButton'
 
 interface Props {
     content: string,
+    status: boolean,
     handleDelete: () => void,
-    handleComplete?: () => {}
+    handleComplete: () => void,
 }
 
 const TrashStyle:React.CSSProperties = {
@@ -26,15 +27,15 @@ const CheckMarkStyle:React.CSSProperties = {
     borderRadius: "20px"
 }
 
-const TaskCard:React.FC<Props> = ({content, handleDelete, handleComplete}) => {
+const TaskCard:React.FC<Props> = ({content, handleDelete, handleComplete, status}) => {
 
     return (
-        <div className="taskCard-container">
+        <div className={status? "taskCard-container completed" : "taskCard-container"}>
             <section className="taskContent">
                 {content}
             </section>
             <section className="taskActions">
-            <ActionButton lable={<MdCheckmark color={"var(--icon-color)"}/>} onClick={() => console.log("Clicked")} style={CheckMarkStyle}/>
+            <ActionButton lable={<MdCheckmark color={"var(--icon-color)"}/>} onClick={handleComplete} style={CheckMarkStyle}/>
             <ActionButton lable={<MdTrash color={"var(--icon-color)"}/>} onClick={handleDelete} style={TrashStyle}/>
             </section>
         </div>
