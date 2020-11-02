@@ -1,6 +1,6 @@
 .taskCard-container {
   width: 95%;
-  height: 77px;
+  min-height: 77px;
   background-color: var(--task-card-background-color);
   margin: 9px;
 
@@ -14,7 +14,9 @@
 }
 
 .taskContent {
-  margin-left: 20px;
+  margin: 20px;
+  max-width: 180px;
+  word-break: break-all;
 }
 
 .taskActions {

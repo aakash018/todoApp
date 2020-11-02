@@ -17,14 +17,18 @@ const TrashStyle:React.CSSProperties = {
     width: "61px",
     height: "55px",
     backgroundColor: "var(--delete-button-background-color)",
-    borderRadius: "20px"
+    borderRadius: "20px",
+
+    margin: "5px",
 }
 
 const CheckMarkStyle:React.CSSProperties = {
     width: "61px",
     height: "55px",
     backgroundColor: "var(--cherkMark-button-background-color)",
-    borderRadius: "20px"
+    borderRadius: "20px",
+
+    margin: "5px",
 }
 
 const TaskCard:React.FC<Props> = ({content, handleDelete, handleComplete, status}) => {

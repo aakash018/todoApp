@@ -3,10 +3,13 @@ import TaskCard from '../TaskCard/TaskCard'
 
 import "./taskContainer.css"
 
+type TaskOptions = "All" | "Completed" | "Unfinished"
+
+
 interface Props {
     tasks: {task: string, status: boolean}[]
     setTasks: React.Dispatch<React.SetStateAction<any>>
-    taskFilterFlag: string
+    taskFilterFlag: TaskOptions
 }
 
 const TaskContainer:React.FC<Props> = ({tasks, setTasks, taskFilterFlag}) => {
@@ -14,7 +17,7 @@ const TaskContainer:React.FC<Props> = ({tasks, setTasks, taskFilterFlag}) => {
 
 
     const deleteTask = (taskToDelete: number):void => {       
-        setTasks(tasks.filter((task, index) => {
+        setTasks(tasks.filter((_, index) => {
             return (index !== taskToDelete)
         }))
     }
@@ -43,6 +46,8 @@ const TaskContainer:React.FC<Props> = ({tasks, setTasks, taskFilterFlag}) => {
                     return <TaskCard key={index} content={task.task} handleDelete={() => deleteTask(index)} status={task.status} handleComplete={() => handleTaskCompleted(index)}/>
                     }
                 }
+                //This Is just for tle lints. MAp Never Goes Here
+                return null
             })}
         </div>
     )

@@ -19,6 +19,8 @@ const ModeToggleButton:React.FC = () => {
             document.body.style.setProperty("--task-card-background-color", "#4B4848")
             document.body.style.setProperty("--delete-button-background-color", "#7A4C4C")
             document.body.style.setProperty("--cherkMark-button-background-color", "#979797")
+            document.body.style.setProperty("--add-icon-color", "#DFDFDF")
+            document.body.style.setProperty("--select-background-color", "#DFDFDF")
             setTheme("Dark")
         } else {
             document.body.style.setProperty("--background-theme-color", "#6fcf97")
@@ -31,6 +33,10 @@ const ModeToggleButton:React.FC = () => {
             document.body.style.setProperty("--task-card-background-color", "#f2e1b5")
             document.body.style.setProperty("--delete-button-background-color", "#ea637c")
             document.body.style.setProperty("--cherkMark-button-background-color", "#6ad394")
+            document.body.style.setProperty("--add-icon-color", "rgb(243, 176, 51)")
+            document.body.style.setProperty("--select-background-color", "rgb(241, 208, 115)")
+
+
             setTheme("Light")
         }
 
